@@ -1,0 +1,47 @@
+server:
+  port: 5000
+  name: author-api
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+#  jackson:
+#    serialization:
+#      indent_output: true
+name: dev-YAML
+environment: development
+main:
+  banner-mode: "off"
+storage:
+  aws:
+    url: http://127.0.0.1
+    port: 8000
+    region: us-west-1
+    accessKey: AKIAUTJGBJOXPBKDKSGA
+    secretKey: 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
+database:
+  data:
+    formatter:
+      date: dd.MM.yyyy
+
+---
+spring:
+  profiles: test
+#  jackson:
+#    serialization:
+#      indent_output: true
+name: dev-YAML
+environment: development
+storage:
+  aws:
+    url: http://127.0.0.1
+    port: 5787
+    region: us-west-1
+    accessKey: testKey
+    secretKey: testSecretKey
+database:
+  data:
+    formatter:
+      date: dd.MM.yyyy
